@@ -8,9 +8,9 @@ export class Service {
 
     constructor() {
         this.client
-            .setEndpoint(config.appwriteUrl)
-            .setProject(config.appwriteProjectId);
-         this.databases = new Databases(this.client);
+        .setEndpoint(config.appwriteUrl)
+        .setProject(config.appwriteProjectId);
+        this.databases = new Databases(this.client);
         this.bucket = new Storage(this.client);
     }
 
@@ -100,7 +100,6 @@ export class Service {
                 ID.unique(),
                 file
             )
-            return true
         } catch (error) {
             console.log("Appwrite service :: uploadFile :: error", error);
             return false
